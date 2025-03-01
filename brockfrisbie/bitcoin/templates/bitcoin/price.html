@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Price</title>
+</head>
+<body>
+    <h1>Current Bitcoin Price</h1>
+    <p>Price: $<span id="bitcoin-price">{{ bitcoin_price }}</span></p>
+
+    <script>
+        function updateBitcoinPrice() {
+            fetch('/bitcoin/', {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'  // Marks this as an AJAX request
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('bitcoin-price').textContent = data.bitcoin_price;
+            })
+            .catch(error => {
+                console.error('Error fetching price:', error);
+                document.getElementById('bitcoin-price').textContent = 'Error fetching price';
+            });
+        }
+
+        // Update price every 10 seconds (10000 milliseconds)
+        setInterval(updateBitcoinPrice, 10000);
+
+        // Optional: Run once immediately on page load
+        updateBitcoinPrice();
+    </script>
+</body>
+</html>

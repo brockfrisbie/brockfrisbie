@@ -1,0 +1,7 @@
+Project Notes
+
+Project Name: brockfrisbie
+Virtual Environment: brockfrisbie
+
+Create Virtual Environment: python -m venv brockfrisbie_venv
+Activate Virtual Environment: source brockfrisbie_venv/bin/activate
