@@ -1,58 +1,82 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+a {
+    color: black;
+    text-decoration: none; /* No underline */
 }
 
-/* Body styling */
+/* Hover effect */
+a:hover {
+    color: darkgray;
+    text-decoration: none; /* No underline */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f5f5f5; /* Light background to match the sketch */
+    font-family: Anonymous Pro, monospace;
+    color: #333;
+    text-align: left;
+    margin: 0; /* Ensure no default margin pushes content */
 }
 
-/* Header styling */
 header {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #000;
+    background-color: #fff; /* Optional: Matches the sketch's header */
+    border-bottom: 1px solid #000; /* Optional: Matches the sketch's border */
+    position: relative; /* For positioning the menu */
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    /* No additional styling needed here */
 }
 
 .menu-icon {
-    font-size: 24px;
     cursor: pointer;
+    font-size: 24px; /* Make the icon slightly larger for visibility */
 }
 
-/* Main content styling */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Navigation menu styling */
+.nav-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 20px; /* Align with the menu icon */
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Add a shadow for depth */
 }
 
-.big-b {
-    font-size: 100px;
-    font-weight: bold;
-    color: #ffd700; /* Yellow color to approximate the sketch */
-    font-family: 'Times New Roman', serif; /* A serif font for a stylized look */
+.nav-menu.active {
+    display: block; /* Show when active class is added */
 }
 
-/* Footer styling */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+}
+
+.nav-menu a {
+    font-size: 16px; /* Adjust as needed */
+}
+
+section {
+    padding: 100px;
+    text-align: center;
+}
+
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    border-top: 1px solid #000;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* Optional: Matches the sketch's footer */
+    border-top: 1px solid #000; /* Optional: Matches the sketch's border */
 }

@@ -12,12 +12,26 @@
         <header>
             <div class="logo">brockfrisbie.com</div>
             <div class="menu-icon">☰</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#bitcoin">Bitcoin</a></li>
+                </ul>
+            </nav>
         </header>
-        <main>
-            <div class="big-b">B</div>
-        </main>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
         <footer>
-            <p>&copy; 2025 Brock Frisbie</p>
+            <p>© 2025 Brock Frisbie</p>
         </footer>
+        <script>
+            // JavaScript to toggle the navigation menu
+            document.querySelector('.menu-icon').addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+        </script>
     </body>
 </html>
