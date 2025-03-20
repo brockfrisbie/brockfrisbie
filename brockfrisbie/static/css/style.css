@@ -71,6 +71,11 @@ section {
     text-align: center;
 }
 
+content {
+    padding: 100px;
+    text-align: center;
+}
+
 footer {
     text-align: center;
     padding: 20px 0;
